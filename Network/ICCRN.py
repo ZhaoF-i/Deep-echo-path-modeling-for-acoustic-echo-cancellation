@@ -63,19 +63,9 @@ class NET(nn.Module):
         self.in_ch_lstm  = CH_LSTM_F(4, channels,  channels)
         self.in_conv     = nn.Conv2d(in_channels=4+channels, out_channels=channels, kernel_size=(1,1))
         self.cfb_e1 = CFB(channels, channels)
-        # self.cfb_e2 = CFB(channels, channels)
-        # self.cfb_e3 = CFB(channels, channels)
-        # self.cfb_e4 = CFB(channels, channels)
-        # self.cfb_e5 = CFB(channels, channels)
-               
         self.ln      = LayerNorm(channels,160)
         self.ch_lstm = CH_LSTM_T(in_ch=channels, feat_ch=channels*2, out_ch=channels, num_layers=2)
-
         self.cfb_d1 = CFB(1*channels, channels)
-        # self.cfb_d4 = CFB(2*channels, channels)
-        # self.cfb_d3 = CFB(2*channels, channels)
-        # self.cfb_d2 = CFB(2*channels, channels)
-        # self.cfb_d1 = CFB(2*channels, channels)
 
         self.out_ch_lstm = CH_LSTM_T(2*channels, channels, channels*2)
         self.out_conv    = nn.Conv2d(in_channels=channels*3, out_channels=self.order*2, kernel_size=(1,1), padding=(0,0), bias=True)
@@ -109,27 +99,17 @@ class NET(nn.Module):
         e0 = self.in_ch_lstm(X0)
         e0 = self.in_conv(torch.cat([e0,X0], 1))
         e1 = self.cfb_e1(e0)
-        # e2 = self.cfb_e2(e1)
-        # e3 = self.cfb_e3(e2)
-        # e4 = self.cfb_e4(e3)
-        # e5 = self.cfb_e5(e4)
                           
         lstm_out = self.ch_lstm(self.ln(e1))
 
         d1 = self.cfb_d1(torch.cat([e1 * lstm_out],dim=1))
-        # d4 = self.cfb_d4(torch.cat([e4, d5],dim=1))
-        # d3 = self.cfb_d3(torch.cat([e3, d4],dim=1))
-        # d2 = self.cfb_d2(torch.cat([e2, d3],dim=1))
-        # d1 = self.cfb_d1(torch.cat([e1, d2],dim=1))
 
         d0 = self.out_ch_lstm(torch.cat([e0, d1],dim=1))
         Y  = self.out_conv(torch.cat([d0, d1],dim=1))
-        # b, c, f, t = Y.shape
         Y = Y.reshape(Y.shape[0], 2, self.order, Y.shape[2], Y.shape[3])
         estEchoPath = Y[:, :, :self.order]
-        # mask = self.sigmoid(Y[:, :, -1])
+
         out = mix_comp - multiply_orders_(far_comp, estEchoPath, self.order)
-        # out = out * mask
 
         y = self.istft(out, t=x.shape[-1])[:, 0]
         # far = self.istft(far_comp, t=x.shape[-1])[:, 0]
