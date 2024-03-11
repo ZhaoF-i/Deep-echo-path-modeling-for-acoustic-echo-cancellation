@@ -133,4 +133,4 @@ The analysis of the AEC performance on unmatched test sets, as presented in tabl
 
 |              | near-end(speech), far-end(speech) |  near-end(speech), far-end(speech)  | near-end(music), far-end(speech)   |near-end(music), far-end(speech)   |
 |:-------------:|:---------:|:--------:|:-----:|:-----:|
-| mix           | <img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/tree/main/pictures/LAEC_2.png"> | 1.43     | 3.36  | 3.36  |
+| mix           | <img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/tree/main/pictures/sample_figs/1_mix.png"> | <img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/tree/main/pictures/sample_figs/2_mix.png"> |  <img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/tree/main/pictures/sample_figs/1_mix.png"> |  <img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/tree/main/pictures/sample_figs/1_mix.png"> |
