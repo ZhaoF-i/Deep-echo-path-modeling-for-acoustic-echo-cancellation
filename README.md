@@ -4,10 +4,12 @@
 
 This GitHub account was created to comply with INTERSPEECH's double-blind regulations, and it will be relocated to a different address once the acceptance results are published.
 
-## Introduction
+## PROPOSED METHOD
+
+### Problem Formulation
 
 <div align="center">
-<img src="https://github.com/ZhaoF-i/SDAEC/blob/main/pictures/LAEC_2.png" alt="LAEC" width="660" height="300">
+<img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/blob/main/pictures/LAEC_2.png" alt="LAEC" width="660" height="300">
 </div>
 
 The diagram of single channel Acoustic echo cancellation (AEC) system is illustrated in the picture above. The microphone signal $d(n)$ is a mixture of echo signal $y(n)$ and near-end signal $s(n)$. If the environmental noise is not considered, the microphone signal in the time domain can be formulated as follows:
@@ -25,6 +27,7 @@ $$
 
 where $S[t, f]$, $D[t, f]$ and $X[t, f]$ represent the near-end signal, microphone signal, and far-end signal at the frame $t$ and frequency $f$, respectively, and $H[k, f]$ is the echo path. Here, $K$ stands for the number of blocks.
 
+### Details of the method
 
  We propose a new perspective for AEC. Specifically, we introduce a deep learning-based approach for modeling echo paths in the time-frequency (T-F) domain. Consequently, the neural network employed in our proposed method can accommodate larger inputs, outputs, and network sizes relative to those used in hybrid methods. This unique feature empowers our method to more effectively capitalize on the inherent advantages of neural networks.
 
@@ -47,3 +50,10 @@ $$
 $$
 
 where $\hat{S}_1$ and $\hat{H}_1$ represent the predicted near-end signal and echo path, respectively, in the far-end single-talk scenario, while $\hat{S}_2$ and $\hat{H}_2$ are their counterparts in the double-talk scenario. The predictors $\mathscr{F_1}$ and $\mathscr{F_2}$ are based on the ICCRN model. Although $\mathscr{F_1}$ and $\mathscr{F_2}$ share the same network architecture, they have distinct parameters, denoted by $\Phi_1$ and $\Phi_2$, respectively. X, Y, and D represent the far-end signal, echo signal, and microphone signal in the T-F domain.
+
+### ICCRN
+
+<div align="center">
+<img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/main/blob/pictures/ICCRN.png" alt="LAEC" width="660" height="300">
+</div>
+
