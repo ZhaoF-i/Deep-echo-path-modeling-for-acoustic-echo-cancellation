@@ -126,10 +126,11 @@ Additionally, Our proposed method achieves the second-highest scores for ERLE an
 | ICCRN-E2E                        | **26.98**     | 2.76     | 12.41 |
 | proposed                         | 26.96     | **2.85**     | **15.96** |
 
+The analysis of the AEC performance on unmatched test sets, as presented in table above, underscores the proposed method's superior generalization capabilities. The method achieves the highest scores in both SDR and PESQ, underscoring its effectiveness in preserving the integrity of the near-end music signal and ensuring a natural listening experience. The marginally lower ERLE score does not detract from the overall audio quality, suggesting a well-balanced approach to echo cancellation. These results indicate that the proposed AEC method is highly adaptable and robust, making it well-suited for real-world applications where acoustic conditions are varied and unpredictable. The method's performance highlights its potential for providing high-quality echo cancellation in diverse acoustic environments.
+
 ## Samples
 
 
-The analysis of the AEC performance on unmatched test sets, as presented in table above, underscores the proposed method's superior generalization capabilities. The method achieves the highest scores in both SDR and PESQ, underscoring its effectiveness in preserving the integrity of the near-end music signal and ensuring a natural listening experience. The marginally lower ERLE score does not detract from the overall audio quality, suggesting a well-balanced approach to echo cancellation. These results indicate that the proposed AEC method is highly adaptable and robust, making it well-suited for real-world applications where acoustic conditions are varied and unpredictable. The method's performance highlights its potential for providing high-quality echo cancellation in diverse acoustic environments.
 
 |              | near-end(speech), far-end(speech) |  near-end(speech), far-end(speech)  | near-end(music), far-end(speech)   |near-end(music), far-end(speech)   |
 |:-------------:|:---------:|:--------:|:-----:|:-----:|
