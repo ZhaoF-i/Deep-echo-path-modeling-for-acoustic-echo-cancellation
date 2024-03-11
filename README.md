@@ -9,7 +9,7 @@ This GitHub account was created to comply with INTERSPEECH's double-blind regula
 ### Problem Formulation
 
 <div align="center">
-<img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/blob/main/pictures/LAEC_2.png" alt="LAEC" width="660" height="300">
+<img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/tree/main/pictures/LAEC_2.png" alt="LAEC" width="660" height="300">
 </div>
 
 The diagram of single channel Acoustic echo cancellation (AEC) system is illustrated in the picture above. The microphone signal $d(n)$ is a mixture of echo signal $y(n)$ and near-end signal $s(n)$. If the environmental noise is not considered, the microphone signal in the time domain can be formulated as follows:
@@ -54,6 +54,6 @@ where $\hat{S}_1$ and $\hat{H}_1$ represent the predicted near-end signal and ec
 ### ICCRN
 
 <div align="center">
-<img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/main/blob/pictures/ICCRN.png" alt="LAEC" width="660" height="300">
+<img src="https://github.com/ZhaoF-i/Deep-echo-path-modeling-for-acoustic-echo-cancellation/tree/main/pictures/ICCRN.png" alt="LAEC" width="660" height="300">
 </div>
 
