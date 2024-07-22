@@ -1,4 +1,4 @@
-# Deep echo path modeling for acoustic echo cancellation
+# Deep echo path modeling for acoustic echo cancellation (Interspeech2024)
 <!--
 ## Announcement
 
